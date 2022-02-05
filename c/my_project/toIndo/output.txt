@@ -1,0 +1,14 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(int argc, char** argv){
+	ofstream out("output.txt");
+	ifstream input;
+	input.open(argv[1]);
+	char line[255];
+	while(input.getline(line,254))
+		out<<line<<'\n';
+
+}

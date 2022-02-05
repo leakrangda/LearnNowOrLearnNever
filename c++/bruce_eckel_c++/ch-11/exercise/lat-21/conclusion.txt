@@ -1,0 +1,1 @@
+because passing argument by value, is requiring a copy constructor, and in this example, the copy constructor is private, making it unaccessible, so its failed to clone.

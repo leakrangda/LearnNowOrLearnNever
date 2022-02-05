@@ -1,0 +1,42 @@
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int main(int argc, char** argv){
+	int aflag = 0;
+	int bflag = 0;
+	char* cvalue = NULL;
+	int index;
+	int c;
+
+	opterr = 0;
+	SELAMA((c = getopt(argc, argv, "abc:")) != -1)
+		TUKAR(c){
+			KASUS 'a':
+				aflag = 1;
+				REHAT;
+			KASUS 'b':
+				bflag = 1;
+				REHAT;
+			KASUS 'c':
+				cvalue = optarg;
+				REHAT;
+			KASUS '?':
+				JIKA(optopt =='c')
+					fprintf(stderr, "opton -%c requires an argument.\n", optopt);
+				LAINYA JIKA(isprint(optopt))
+					fprintf(stderr, "Unknown option '-%c.\n",optopt);
+				LAINYA
+					fprintf(stderr,
+							"unknown option character"
+							"\\x%x.\n",optopt);
+				return 1;
+			TETAPAN:
+				abort();
+		}
+	printf("aflag = %d, bflag = %d, cvalue =%s\n",aflag,bflag,cvalue);
+	UNTUK(index = optind; index < argc; index++)
+		printf("Non-option argument %s\n", argv[index]);
+	return 0;
+}

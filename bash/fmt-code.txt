@@ -1,0 +1,9 @@
+# this file contains code with comments.
+
+#this line is a comment.
+#followed by antoher comment
+#and another.
+
+this, on the other hand, is  a line of code
+and another line of code.
+and another.

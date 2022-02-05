@@ -1,0 +1,39 @@
+--double f() function definition:
+0000000000000690 <_Z1fv>:
+ 690:	55                   	push   %rbp
+ 691:	48 89 e5             	mov    %rsp,%rbp
+ 694:	f2 0f 10 05 9c 00 00 	movsd  0x9c(%rip),%xmm0        # 738 <_IO_stdin_used+0x8>
+ 69b:	00 
+ 69c:	5d                   	pop    %rbp
+ 69d:	c3                   	retq   
+
+--int main() function definition:
+000000000000069e <main>:
+ 69e:	55                   	push   %rbp
+ 69f:	48 89 e5             	mov    %rsp,%rbp
+ 6a2:	e8 e9 ff ff ff       	callq  690 <_Z1fv>
+ 6a7:	b8 00 00 00 00       	mov    $0x0,%eax
+ 6ac:	5d                   	pop    %rbp
+ 6ad:	c3                   	retq   
+ 6ae:	66 90                	xchg   %ax,%ax
+
+--with local variable a in int main():
+0000000000000690 <_Z1fv>:
+ 690:	55                   	push   %rbp
+ 691:	48 89 e5             	mov    %rsp,%rbp
+ 694:	f2 0f 10 05 ac 00 00 	movsd  0xac(%rip),%xmm0        # 748 <_IO_stdin_used+0x8>
+ 69b:	00 
+ 69c:	5d                   	pop    %rbp
+ 69d:	c3                   	retq   
+--double f() function definition:
+000000000000069e <main>:
+ 69e:	55                   	push   %rbp
+ 69f:	48 89 e5             	mov    %rsp,%rbp
+ 6a2:	48 83 ec 10          	sub    $0x10,%rsp
+ 6a6:	e8 e5 ff ff ff       	callq  690 <_Z1fv>
+ 6ab:	66 48 0f 7e c0       	movq   %xmm0,%rax
+ 6b0:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+ 6b4:	b8 00 00 00 00       	mov    $0x0,%eax
+ 6b9:	c9                   	leaveq 
+ 6ba:	c3                   	retq   
+ 6bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)

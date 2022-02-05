@@ -1,0 +1,26 @@
+0000000000000690 <_Z1fi>:
+ 690:	55                   	push   %rbp
+ 691:	48 89 e5             	mov    %rsp,%rbp
+ 694:	48 83 ec 10          	sub    $0x10,%rsp
+ 698:	89 7d fc             	mov    %edi,-0x4(%rbp)
+ 69b:	83 7d fc 00          	cmpl   $0x0,-0x4(%rbp)
+ 69f:	7e 0f                	jle    6b0 <_Z1fi+0x20>
+ 6a1:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ 6a4:	83 e8 01             	sub    $0x1,%eax
+ 6a7:	89 c7                	mov    %eax,%edi
+ 6a9:	e8 e2 ff ff ff       	callq  690 <_Z1fi>
+ 6ae:	eb 05                	jmp    6b5 <_Z1fi+0x25>
+ 6b0:	b8 00 00 00 00       	mov    $0x0,%eax
+ 6b5:	c9                   	leaveq 
+ 6b6:	c3                   	retq   
+
+00000000000006b7 <main>:
+ 6b7:	55                   	push   %rbp
+ 6b8:	48 89 e5             	mov    %rsp,%rbp
+ 6bb:	bf 05 00 00 00       	mov    $0x5,%edi
+ 6c0:	e8 cb ff ff ff       	callq  690 <_Z1fi>
+ 6c5:	b8 00 00 00 00       	mov    $0x0,%eax
+ 6ca:	5d                   	pop    %rbp
+ 6cb:	c3                   	retq   
+ 6cc:	0f 1f 40 00          	nopl   0x0(%rax)
+

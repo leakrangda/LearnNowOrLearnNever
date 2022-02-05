@@ -1,0 +1,2 @@
+non inline func() time elapsed:338742
+inline time elapsed:290790

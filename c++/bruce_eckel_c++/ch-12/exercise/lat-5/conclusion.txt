@@ -1,0 +1,1 @@
+because the prefix returns the object itself, so its fine if it non const. the postfix is the contra, that it returned temporary object, that automatically is a const, so whether it const or non const, it will be treated as const either way.

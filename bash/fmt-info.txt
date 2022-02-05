@@ -1,0 +1,7 @@
+	`fmt` reads from the specified FILE arguments (or standard input if none are given), and writes to standard output.
+
+	by default, blank lines, spaces between words, and identation are preserved in the output; successive input lines with different identation are not joined; tabs are expanded on input and introduced on output.
+
+	`fmt` prefers breaking lines at the end of a sentence, and tries to avoid line breaks after the first word of a sentence or before the last words of a sentence. A "sentence break" is defined as ecihter the spaces or end of line, ignoring any itervening parentheses or quotes. LIke TeX, `fmt` reads entire "paragraphs" before choosing line breaks; the algorithm is a variant of that given by donald e. knuth and michael f. plass in "breaking paragraphs into lines", 
+`software--practice & experience` 11, 11(november 1981), 1119 - 11184.
+	

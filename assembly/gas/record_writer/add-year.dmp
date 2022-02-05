@@ -1,0 +1,89 @@
+
+add-year:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+08048074 <_start>:
+ 8048074:	89 e5                	mov    %esp,%ebp
+ 8048076:	83 ec 08             	sub    $0x8,%esp
+ 8048079:	b8 05 00 00 00       	mov    $0x5,%eax
+ 804807e:	bb 1c 91 04 08       	mov    $0x804911c,%ebx
+ 8048083:	b9 00 00 00 00       	mov    $0x0,%ecx
+ 8048088:	ba b6 01 00 00       	mov    $0x1b6,%edx
+ 804808d:	cd 80                	int    $0x80
+ 804808f:	89 45 fc             	mov    %eax,-0x4(%ebp)
+ 8048092:	b8 05 00 00 00       	mov    $0x5,%eax
+ 8048097:	bb 25 91 04 08       	mov    $0x8049125,%ebx
+ 804809c:	b9 41 00 00 00       	mov    $0x41,%ecx
+ 80480a1:	ba b6 01 00 00       	mov    $0x1b6,%edx
+ 80480a6:	cd 80                	int    $0x80
+ 80480a8:	89 45 f8             	mov    %eax,-0x8(%ebp)
+
+080480ab <loop_begin>:
+ 80480ab:	ff 75 fc             	pushl  -0x4(%ebp)
+ 80480ae:	68 38 91 04 08       	push   $0x8049138
+ 80480b3:	e8 2e 00 00 00       	call   80480e6 <read_record>
+ 80480b8:	83 c4 08             	add    $0x8,%esp
+ 80480bb:	3d 44 01 00 00       	cmp    $0x144,%eax
+ 80480c0:	75 18                	jne    80480da <loop_end>
+ 80480c2:	ff 05 78 92 04 08    	incl   0x8049278
+ 80480c8:	ff 75 f8             	pushl  -0x8(%ebp)
+ 80480cb:	68 38 91 04 08       	push   $0x8049138
+ 80480d0:	e8 2c 00 00 00       	call   8048101 <write_record>
+ 80480d5:	83 c4 08             	add    $0x8,%esp
+ 80480d8:	eb d1                	jmp    80480ab <loop_begin>
+
+080480da <loop_end>:
+ 80480da:	b8 01 00 00 00       	mov    $0x1,%eax
+ 80480df:	bb 00 00 00 00       	mov    $0x0,%ebx
+ 80480e4:	cd 80                	int    $0x80
+
+080480e6 <read_record>:
+ 80480e6:	55                   	push   %ebp
+ 80480e7:	89 e5                	mov    %esp,%ebp
+ 80480e9:	53                   	push   %ebx
+ 80480ea:	8b 5d 0c             	mov    0xc(%ebp),%ebx
+ 80480ed:	8b 4d 08             	mov    0x8(%ebp),%ecx
+ 80480f0:	ba 44 01 00 00       	mov    $0x144,%edx
+ 80480f5:	b8 03 00 00 00       	mov    $0x3,%eax
+ 80480fa:	cd 80                	int    $0x80
+ 80480fc:	5b                   	pop    %ebx
+ 80480fd:	89 ec                	mov    %ebp,%esp
+ 80480ff:	5d                   	pop    %ebp
+ 8048100:	c3                   	ret    
+
+08048101 <write_record>:
+ 8048101:	55                   	push   %ebp
+ 8048102:	89 e5                	mov    %esp,%ebp
+ 8048104:	53                   	push   %ebx
+ 8048105:	b8 04 00 00 00       	mov    $0x4,%eax
+ 804810a:	8b 5d 0c             	mov    0xc(%ebp),%ebx
+ 804810d:	8b 4d 08             	mov    0x8(%ebp),%ecx
+ 8048110:	ba 44 01 00 00       	mov    $0x144,%edx
+ 8048115:	cd 80                	int    $0x80
+ 8048117:	5b                   	pop    %ebx
+ 8048118:	89 ec                	mov    %ebp,%esp
+ 804811a:	5d                   	pop    %ebp
+ 804811b:	c3                   	ret    
+
+Disassembly of section .data:
+
+0804911c <input_file_name>:
+ 804911c:	74 65                	je     8049183 <record_buffer+0x4b>
+ 804911e:	78 74                	js     8049194 <record_buffer+0x5c>
+ 8049120:	2e 64 61             	cs fs popa 
+ 8049123:	74 00                	je     8049125 <output_file_name>
+
+08049125 <output_file_name>:
+ 8049125:	74 65                	je     804918c <record_buffer+0x54>
+ 8049127:	73 74                	jae    804919d <record_buffer+0x65>
+ 8049129:	6f                   	outsl  %ds:(%esi),(%dx)
+ 804912a:	75 74                	jne    80491a0 <record_buffer+0x68>
+ 804912c:	2e 64 61             	cs fs popa 
+ 804912f:	74 00                	je     8049131 <_edata>
+
+Disassembly of section .bss:
+
+08049138 <record_buffer>:
+	...

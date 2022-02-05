@@ -1,0 +1,47 @@
+/*css Documents*/
+
+body{
+	background: #dcdcdc;
+	font-family:helvetica, sans-serif,arial;
+	font-size: 14px;
+	text-align:center;
+}
+h1{
+	margin: 20px auto;
+	padding: 0px;
+	text-transform:lowercase;
+	font-family: "Bernard MT Condensed";
+	font-weight: 400px;
+	font-size: 24px;
+	text-align: center;
+	float: relative;
+}
+.clockStyle{
+	height: 30px;
+	width: 500px;
+	margin: 0px auto;
+	background-color: #000;
+	border: #999 5px inset;
+	font-size: 24px;
+	font-family: 'arial black';
+	letter-spacing: 2px;
+	padding:10px;
+	color:#0FF
+}
+#logo{
+	width: 980px;
+	height: 100px;
+	margin: 0px auto;
+	padding: 80px 0px 0px 0px;
+	color: #ffffff;
+}
+#logo h1{
+	display: black;
+	margin: 0px;
+	padding: 0px;
+	text-transform: lowercase;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 80px;
+	color: black;
+}

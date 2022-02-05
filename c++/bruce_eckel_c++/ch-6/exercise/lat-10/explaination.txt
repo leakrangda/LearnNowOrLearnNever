@@ -1,0 +1,3 @@
+//tentang default constructor dan destructor
+untuk yang memakai default constructor, compiler membuat sendiri constructor dalam object dan menyesuaikan dengan data yang ada di dalam object tersebut dan dinisialisasi dengan nilai 0 sesuai.
+sedangkan jika menggunakan non default constructor, inisialisasi menjadi tanggung jawab programmer, hal ini dikarenakan constructor dibuat berdasarkan programmer dan bukan oleh compiler (dengan hal ini menggunakan argument yang berasal dari luar object). sehingga ketika compiler menemukan pembuatan object tanpa adanya argument pada constructor, compiler akan mengeluarkan error karena dia tidak bisa melakukan inisialisasi yang tepat.

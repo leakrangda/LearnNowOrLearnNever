@@ -1,0 +1,25 @@
+#make file dengan pattern builtin:stem replacement
+#deklarasi relatif direktori terhadap file
+vpath %.cpp src
+vpath %.h include
+
+#flag untuk memasukan header
+CPPFLAGS = -I include -c
+CC = g++
+
+#resep untuk aplikasi lat_9
+%.o: %.c
+	$(CC) $(CPPFLAGS) $<
+
+#resep untuk membuat object file Mem.o
+Mem.o:%.cpp %.h
+	$(CC) $(CPPFLAGS) $<
+
+#resep untuk membuat object file MemTest.o
+MemTest.o:%.cpp %.h
+	$(CC) $(CPPFLAGS) $<
+
+#variable phony, clean untuk memberishkan file object
+.PHONY = clean
+clean:
+	rm -f *.o $<

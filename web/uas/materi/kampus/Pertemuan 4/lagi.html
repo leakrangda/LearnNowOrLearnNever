@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> iseng</title>
+</head>
+<style type="text/css">
+	body{
+
+		background: azure;
+		font-size: 15px;
+	}
+	div{
+		width: 200px;
+		height: 200px;
+		background-color: coral;
+		position: absolute !important;
+		top: calc(50%-100px);
+		left: calc(50%-100px) ;
+		-webkit-animation-name:kotak-ke-lingkaran;
+		-webkit-animation-duration:5s;
+		-webkit-animation-delay:1s;
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-direction:alternate;
+	}
+	@-webkit-keyframes kotak-ke-lingkaran{
+		0%{
+			border-radius:0 0 0 0;
+			background:coral;
+			transform: rotate(0deg); 
+		}
+		25%{
+			border-radius: 50% 0 0 0;
+			background: darksalmon;
+			transform: rotate(45deg);
+		}
+		50%{
+			border-radius: 50% 50% 0 0;
+			background: indianred;
+			transform: rotate(90deg);
+
+		}
+		75%{
+			border-radius: 50% 50% 50% 0;
+			background: lightcoral;
+			transform: rotate(145deg);
+		}
+		100%{
+			border-radius: 50%;
+			background: darksalmon;
+			transform: rotate(180deg);
+		}
+	}
+
+</style>
+<body>
+
+</body>
+</html>

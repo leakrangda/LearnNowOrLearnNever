@@ -1,0 +1,36 @@
+//cpplibtest.cpp
+//cpplib
+//test of c++ library
+#include "cpplib.h"
+#include "../require.h"
+#include <fstream>
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+	Stash intStash;
+	intStash.initialize(sizeof(int));
+	for(int i=0;i < 100;i++)
+		intStash.add(&i);
+	for(int j=0;j < 100;j++)
+		cout<<"intStash.fetch("<<j<<") ="
+			<<*(int*)intStash.fetch(j)
+			<<endl;
+	//hold 80-characters string
+	Stash stringStash;
+	const int bufsize=80;
+	stringStash.initialize(sizeof(char) * bufsize);
+	ifstream in("cpplibtest.cpp");
+	assure(in, "cpplibtest.cpp");
+	string line;
+	while(getline(in, line))
+		stringStash.add(line.c_str());
+	int k=0;
+	char* cp;
+	while((cp = (char*)stringStash.fetch(k++))!=0)
+			cout << "stringStash.fetch(" <<k<<" )= "
+			<< cp<<endl;
+	intStash.cleanup();
+	stringStash.cleanup();
+}

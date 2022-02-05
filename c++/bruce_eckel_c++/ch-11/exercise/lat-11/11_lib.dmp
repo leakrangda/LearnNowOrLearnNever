@@ -1,0 +1,21 @@
+00000000000006be <main>:
+ 6be:	55                   	push   %rbp
+ 6bf:	48 89 e5             	mov    %rsp,%rbp
+ 6c2:	48 83 ec 08          	sub    $0x8,%rsp
+ 6c6:	bf 41 00 00 00       	mov    $0x41,%edi
+ 6cb:	e8 c0 ff ff ff       	callq  690 <_Z5func1i>
+ 6d0:	bf 61 00 00 00       	mov    $0x61,%edi
+ 6d5:	e8 c0 ff ff ff       	callq  69a <_Z5func2c>
+ 6da:	f3 0f 10 05 b6 00 00 	movss  0xb6(%rip),%xmm0        # 798 <_IO_stdin_used+0x8>
+ 6e1:	00 
+ 6e2:	e8 bf ff ff ff       	callq  6a6 <_Z5func3f>
+ 6e7:	48 8b 05 b2 00 00 00 	mov    0xb2(%rip),%rax        # 7a0 <_IO_stdin_used+0x10>
+ 6ee:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+ 6f2:	f2 0f 10 45 f8       	movsd  -0x8(%rbp),%xmm0
+ 6f7:	e8 b6 ff ff ff       	callq  6b2 <_Z5func4d>
+ 6fc:	b8 00 00 00 00       	mov    $0x0,%eax
+ 701:	c9                   	leaveq 
+ 702:	c3                   	retq   
+ 703:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ 70a:	00 00 00 
+ 70d:	0f 1f 00             	nopl   (%rax)

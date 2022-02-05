@@ -1,0 +1,28 @@
+cat-"concatenate"
+	memiliki fungsi untuk menempelkan text yang diinput ke target.
+input bisa berupa stdin, file, atau pipe. output dapat berupa stdout, file, atau pipe.
+<penggunaan>
+	cat [tanpa argument]
+		berfungsi mengambil data dari stdin. dan mengeluarkanya melalui stdout jika ditemui EOF <ctr-D, linux, ctr-z windows>.
+	cat file1
+		berfungsi mengambil data dari file1 dan mengeluarkanya melalui stdout
+	cat -A file1
+		berfungsi mengambil data dari file1 dan mengeluarkanya melalui stdout dengan menampilkan invisible character <tab,spasi,EOF>
+	cat -n file1
+		berfungsi mengambil data dari file1 dan mengeluarkanya melalui stdout dengan menampilkan number line.
+	cat -b file1
+		memberi nomor hanya pada baris berisi teks. menimpah -n.
+	cat -E file1
+		memperlihatkan akhir baris pada teks dengan $.
+	cat -e file1
+		sama dengan -vE, $ pada akhir baris, dan memperlihatkan invisible character.
+	cat -s file1
+		memotong baris kosong yang terus menerus.
+	cat -t file1
+		sama dengan -vT, memperlihatkan invisible character, dan Tab.
+	cat -T file1
+		perlihatkan tab character sebagai ^I.
+	cat -u (lewati)
+
+	cat -v file1
+		perlihatkan invisible character (character non printing)

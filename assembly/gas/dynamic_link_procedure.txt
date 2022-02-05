@@ -1,0 +1,2 @@
+dynamic linking with ld\n
+ld -melf_i386 --dynamic-linker /usr/lib/ld-linux.so.6 -o a.out a.o /lib/i386-linux-gnu/libc.so.6 

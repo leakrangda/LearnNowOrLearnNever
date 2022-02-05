@@ -1,0 +1,56 @@
+0000000000000718 <main>:
+ 718:	55                   	push   %rbp
+ 719:	48 89 e5             	mov    %rsp,%rbp
+ 71c:	48 83 ec 70          	sub    $0x70,%rsp
+ 720:	48 8d 45 90          	lea    -0x70(%rbp),%rax
+ 724:	ff 35 9e 09 20 00    	pushq  0x20099e(%rip)        # 2010c8 <B+0x68>
+ 72a:	ff 35 90 09 20 00    	pushq  0x200990(%rip)        # 2010c0 <B+0x60>
+ 730:	ff 35 82 09 20 00    	pushq  0x200982(%rip)        # 2010b8 <B+0x58>
+ 736:	ff 35 74 09 20 00    	pushq  0x200974(%rip)        # 2010b0 <B+0x50>
+ 73c:	ff 35 66 09 20 00    	pushq  0x200966(%rip)        # 2010a8 <B+0x48>
+ 742:	ff 35 58 09 20 00    	pushq  0x200958(%rip)        # 2010a0 <B+0x40>
+ 748:	ff 35 4a 09 20 00    	pushq  0x20094a(%rip)        # 201098 <B+0x38>
+ 74e:	ff 35 3c 09 20 00    	pushq  0x20093c(%rip)        # 201090 <B+0x30>
+ 754:	ff 35 2e 09 20 00    	pushq  0x20092e(%rip)        # 201088 <B+0x28>
+ 75a:	ff 35 20 09 20 00    	pushq  0x200920(%rip)        # 201080 <B+0x20>
+ 760:	ff 35 12 09 20 00    	pushq  0x200912(%rip)        # 201078 <B+0x18>
+ 766:	ff 35 04 09 20 00    	pushq  0x200904(%rip)        # 201070 <B+0x10>
+ 76c:	ff 35 f6 08 20 00    	pushq  0x2008f6(%rip)        # 201068 <B+0x8>
+ 772:	ff 35 e8 08 20 00    	pushq  0x2008e8(%rip)        # 201060 <B>
+ 778:	48 89 c7             	mov    %rax,%rdi
+ 77b:	e8 10 ff ff ff       	callq  690 <_Z6bigfun3Big>
+ 780:	48 83 c4 70          	add    $0x70,%rsp
+ 784:	48 8b 45 90          	mov    -0x70(%rbp),%rax
+ 788:	48 89 05 51 09 20 00 	mov    %rax,0x200951(%rip)        # 2010e0 <B2>
+ 78f:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+ 793:	48 89 05 4e 09 20 00 	mov    %rax,0x20094e(%rip)        # 2010e8 <B2+0x8>
+ 79a:	48 8b 45 a0          	mov    -0x60(%rbp),%rax
+ 79e:	48 89 05 4b 09 20 00 	mov    %rax,0x20094b(%rip)        # 2010f0 <B2+0x10>
+ 7a5:	48 8b 45 a8          	mov    -0x58(%rbp),%rax
+ 7a9:	48 89 05 48 09 20 00 	mov    %rax,0x200948(%rip)        # 2010f8 <B2+0x18>
+ 7b0:	48 8b 45 b0          	mov    -0x50(%rbp),%rax
+ 7b4:	48 89 05 45 09 20 00 	mov    %rax,0x200945(%rip)        # 201100 <B2+0x20>
+ 7bb:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+ 7bf:	48 89 05 42 09 20 00 	mov    %rax,0x200942(%rip)        # 201108 <B2+0x28>
+ 7c6:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+ 7ca:	48 89 05 3f 09 20 00 	mov    %rax,0x20093f(%rip)        # 201110 <B2+0x30>
+ 7d1:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+ 7d5:	48 89 05 3c 09 20 00 	mov    %rax,0x20093c(%rip)        # 201118 <B2+0x38>
+ 7dc:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+ 7e0:	48 89 05 39 09 20 00 	mov    %rax,0x200939(%rip)        # 201120 <B2+0x40>
+ 7e7:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+ 7eb:	48 89 05 36 09 20 00 	mov    %rax,0x200936(%rip)        # 201128 <B2+0x48>
+ 7f2:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 7f6:	48 89 05 33 09 20 00 	mov    %rax,0x200933(%rip)        # 201130 <B2+0x50>
+ 7fd:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 801:	48 89 05 30 09 20 00 	mov    %rax,0x200930(%rip)        # 201138 <B2+0x58>
+ 808:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 80c:	48 89 05 2d 09 20 00 	mov    %rax,0x20092d(%rip)        # 201140 <B2+0x60>
+ 813:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ 817:	48 89 05 2a 09 20 00 	mov    %rax,0x20092a(%rip)        # 201148 <B2+0x68>
+ 81e:	b8 00 00 00 00       	mov    $0x0,%eax
+ 823:	c9                   	leaveq 
+ 824:	c3                   	retq   
+ 825:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ 82c:	00 00 00 
+ 82f:	90                   	nop

@@ -1,0 +1,7 @@
+ConstTemporary.cpp: In function ‘int main()’:
+ConstTemporary.cpp:11:6: error: invalid initialization of non-const reference of type ‘X&’ from an rvalue of type ‘X’
+  g1(f());
+     ~^~
+ConstTemporary.cpp:6:6: note:   initializing argument 1 of ‘void g1(X&)’
+ void g1(X&){} //pass by non-const reference
+      ^~

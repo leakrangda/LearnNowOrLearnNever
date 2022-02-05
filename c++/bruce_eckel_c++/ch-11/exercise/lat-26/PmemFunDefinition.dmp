@@ -1,0 +1,44 @@
+0000000000000940 <main>:
+ 940:	55                   	push   %rbp
+ 941:	48 89 e5             	mov    %rsp,%rbp
+ 944:	48 83 ec 10          	sub    $0x10,%rsp
+ 948:	48 8d 05 05 01 00 00 	lea    0x105(%rip),%rax        # a54 <_ZNK7Simple21fEf>
+ 94f:	48 89 05 4a 08 20 00 	mov    %rax,0x20084a(%rip)        # 2011a0 <fp>
+ 956:	48 c7 05 47 08 20 00 	movq   $0x0,0x200847(%rip)        # 2011a8 <fp+0x8>
+ 95d:	00 00 00 00 
+ 961:	48 8b 05 f8 06 20 00 	mov    0x2006f8(%rip),%rax        # 201060 <fp3>
+ 968:	48 8b 15 f9 06 20 00 	mov    0x2006f9(%rip),%rdx        # 201068 <fp3+0x8>
+ 96f:	48 89 d1             	mov    %rdx,%rcx
+ 972:	48 8d 55 ff          	lea    -0x1(%rbp),%rdx
+ 976:	48 01 ca             	add    %rcx,%rdx
+ 979:	be 01 00 00 00       	mov    $0x1,%esi
+ 97e:	48 89 d7             	mov    %rdx,%rdi
+ 981:	ff d0                	callq  *%rax
+ 983:	89 c6                	mov    %eax,%esi
+ 985:	48 8d 3d f4 06 20 00 	lea    0x2006f4(%rip),%rdi        # 201080 <_ZSt4cout@@GLIBCXX_3.4>
+ 98c:	e8 2f fe ff ff       	callq  7c0 <_ZNSolsEi@plt>
+ 991:	48 89 c2             	mov    %rax,%rdx
+ 994:	48 8b 05 5d 06 20 00 	mov    0x20065d(%rip),%rax        # 200ff8 <_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GLIBCXX_3.4>
+ 99b:	48 89 c6             	mov    %rax,%rsi
+ 99e:	48 89 d7             	mov    %rdx,%rdi
+ 9a1:	e8 4a fe ff ff       	callq  7f0 <_ZNSolsEPFRSoS_E@plt>
+ 9a6:	48 8b 05 f3 07 20 00 	mov    0x2007f3(%rip),%rax        # 2011a0 <fp>
+ 9ad:	48 8b 15 f4 07 20 00 	mov    0x2007f4(%rip),%rdx        # 2011a8 <fp+0x8>
+ 9b4:	48 89 d1             	mov    %rdx,%rcx
+ 9b7:	48 8d 55 ff          	lea    -0x1(%rbp),%rdx
+ 9bb:	48 01 ca             	add    %rcx,%rdx
+ 9be:	f3 0f 10 05 42 01 00 	movss  0x142(%rip),%xmm0        # b08 <_ZStL19piecewise_construct+0x4>
+ 9c5:	00 
+ 9c6:	48 89 d7             	mov    %rdx,%rdi
+ 9c9:	ff d0                	callq  *%rax
+ 9cb:	89 c6                	mov    %eax,%esi
+ 9cd:	48 8d 3d ac 06 20 00 	lea    0x2006ac(%rip),%rdi        # 201080 <_ZSt4cout@@GLIBCXX_3.4>
+ 9d4:	e8 e7 fd ff ff       	callq  7c0 <_ZNSolsEi@plt>
+ 9d9:	48 89 c2             	mov    %rax,%rdx
+ 9dc:	48 8b 05 15 06 20 00 	mov    0x200615(%rip),%rax        # 200ff8 <_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GLIBCXX_3.4>
+ 9e3:	48 89 c6             	mov    %rax,%rsi
+ 9e6:	48 89 d7             	mov    %rdx,%rdi
+ 9e9:	e8 02 fe ff ff       	callq  7f0 <_ZNSolsEPFRSoS_E@plt>
+ 9ee:	b8 00 00 00 00       	mov    $0x0,%eax
+ 9f3:	c9                   	leaveq 
+ 9f4:	c3                   	retq   

@@ -1,0 +1,1 @@
+as matter of fact, we cant iterate over member array in class using pointer to member

@@ -1,0 +1,41 @@
+0000000000000690 <main>:
+ 690:	55                   	push   %rbp
+ 691:	48 89 e5             	mov    %rsp,%rbp
+ 694:	e8 0c 00 00 00       	callq  6a5 <_Z8functionv>
+ 699:	e8 21 00 00 00       	callq  6bf <_Z9function2v>
+ 69e:	b8 00 00 00 00       	mov    $0x0,%eax
+ 6a3:	5d                   	pop    %rbp
+ 6a4:	c3                   	retq   
+
+00000000000006a5 <_Z8functionv>:
+ 6a5:	55                   	push   %rbp
+ 6a6:	48 89 e5             	mov    %rsp,%rbp
+ 6a9:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+ 6b0:	83 7d fc 09          	cmpl   $0x9,-0x4(%rbp)
+ 6b4:	7f 06                	jg     6bc <_Z8functionv+0x17>
+ 6b6:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+ 6ba:	eb f4                	jmp    6b0 <_Z8functionv+0xb>
+ 6bc:	90                   	nop
+ 6bd:	5d                   	pop    %rbp
+ 6be:	c3                   	retq   
+
+00000000000006bf <_Z9function2v>:
+ 6bf:	55                   	push   %rbp
+ 6c0:	48 89 e5             	mov    %rsp,%rbp
+ 6c3:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+ 6ca:	83 7d fc 09          	cmpl   $0x9,-0x4(%rbp)
+ 6ce:	7f 06                	jg     6d6 <_Z9function2v+0x17>
+ 6d0:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+ 6d4:	eb f4                	jmp    6ca <_Z9function2v+0xb>
+ 6d6:	90                   	nop
+ 6d7:	5d                   	pop    %rbp
+ 6d8:	c3                   	retq   
+ 6d9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000006e0 <__libc_csu_init>:
+ 6e0:	41 57                	push   %r15
+ 6e2:	41 56                	push   %r14
+ 6e4:	41 89 ff             	mov    %edi,%r15d
+ 6e7:	41 55                	push   %r13
+ 6e9:	41 54                	push   %r12
+ 6eb:	4c 8d 25 e6 06 20 00 	lea    0x2006e6(%rip),%r12        # 200dd8 <__frame_dummy_init_array_entry>

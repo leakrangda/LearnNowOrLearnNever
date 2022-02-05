@@ -1,0 +1,24 @@
+<nama>
+	sort
+</nama>
+<fungsi>
+	digunakan untuk mensorting data.
+</fungsi>
+<attribut>
+	<switch>
+		-b<fungsi>
+			digunakan untuk menghilangkan spasi
+		</fugsi>
+		-f<fungsi>
+			untuk case insensitif
+		</funsgsi>
+		-n<fungsi>
+			untuk numerik
+		</fungsi>
+		-r<fungsi>
+			untuk kebalikan, secara default sort melakukan sorting secara ascending.
+		</fungsi>
+		-k<fungsi>
+			sorting berdasarkan key field
+		</fungsi>
+

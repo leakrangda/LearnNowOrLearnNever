@@ -1,0 +1,7 @@
+#pointer to constant
+	const int* u;
+	int const* v;
+#constant pointer
+	int* const w = &d 		//harus selalu diinisialisasi
+	const int* const x = &d		//constant pointer ke constant var
+	int const* const y = &d 	//constant pointer ke constant var

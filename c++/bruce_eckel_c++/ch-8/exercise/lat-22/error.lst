@@ -1,0 +1,13 @@
+ConstMember.cpp:10:5: error: prototype for ‘int X::f() const’ does not match any in class ‘X’
+ int X::f() const{return i;}
+     ^
+ConstMember.cpp:6:7: error: candidate is: int X::f()
+   int f();
+       ^
+ConstMember.cpp: In function ‘int main()’:
+ConstMember.cpp:16:7: error: passing ‘const X’ as ‘this’ argument discards qualifiers [-fpermissive]
+  x2.f();
+       ^
+ConstMember.cpp:6:7: note:   in call to ‘int X::f()’
+   int f();
+       ^

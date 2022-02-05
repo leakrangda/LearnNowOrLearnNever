@@ -1,0 +1,1 @@
+jadi kalo double, fungsi menggunakan xmm register lalu dikeluarkan ke rax register

@@ -1,0 +1,3 @@
+kesimpulan:
+pemanggilan member fungsi harus disertakan dengan class, dalam hal ini fungsi
+fungsi_1 dan fungsi_2 tidak bisa dipanggil karena tidak terdeklarasi dan tidak memiliki implementasi di luar class/struct (dikarenakan kedua fungsi tersebut telah menjadi bagian dari struct/class Data).

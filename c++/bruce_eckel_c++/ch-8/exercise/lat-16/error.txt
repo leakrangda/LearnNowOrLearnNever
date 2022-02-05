@@ -1,0 +1,23 @@
+ConstPointer.cpp: In function ‘void u(const int*)’:
+ConstPointer.cpp:6:10: error: assignment of read-only location ‘* cip’
+   *cip = 2; //illegal -- modifies value
+          ^
+ConstPointer.cpp:8:14: error: invalid conversion from ‘const int*’ to ‘int*’ [-fpermissive]
+   int* ip2 = cip; //illegal: non-const
+              ^~~
+ConstPointer.cpp: In function ‘int main()’:
+ConstPointer.cpp:26:8: error: invalid conversion from ‘const int*’ to ‘int*’ [-fpermissive]
+   t(cip); //not ok
+        ^
+ConstPointer.cpp:4:6: note:   initializing argument 1 of ‘void t(int*)’
+ void t(int*){}
+      ^
+ConstPointer.cpp:29:15: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+   char* cp = v(); //not ok
+              ~^~
+ConstPointer.cpp:31:15: error: invalid conversion from ‘const int*’ to ‘int*’ [-fpermissive]
+   int* ip2 = w(); //not ok
+              ~^~
+ConstPointer.cpp:34:10: error: assignment of read-only location ‘* w()’
+   *w() = 1; //not ok
+          ^

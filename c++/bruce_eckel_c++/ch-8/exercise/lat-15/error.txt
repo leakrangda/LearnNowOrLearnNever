@@ -1,0 +1,31 @@
+ConstReturnValues.cpp: In function ‘int main()’:
+ConstReturnValues.cpp:29:7: error: invalid initialization of non-const reference of type ‘X&’ from an rvalue of type ‘X’
+  f7(f5()); //causes warning or error
+     ~~^~
+ConstReturnValues.cpp:22:6: note:   initializing argument 1 of ‘void f7(X&)’
+ void f7(X& x){ //pass by non-const reference
+      ^~
+ConstReturnValues.cpp:31:8: error: invalid initialization of non-const reference of type ‘X&’ from an rvalue of type ‘X’
+   f7(f5());
+      ~~^~
+ConstReturnValues.cpp:22:6: note:   initializing argument 1 of ‘void f7(X&)’
+ void f7(X& x){ //pass by non-const reference
+      ^~
+ConstReturnValues.cpp:32:13: error: passing ‘const X’ as ‘this’ argument discards qualifiers [-fpermissive]
+   f6() = X(1);
+             ^
+ConstReturnValues.cpp:5:7: note:   in call to ‘constexpr X& X::operator=(X&&)’
+ class X{
+       ^
+ConstReturnValues.cpp:33:15: error: passing ‘const X’ as ‘this’ argument discards qualifiers [-fpermissive]
+   f6().modify();
+               ^
+ConstReturnValues.cpp:13:6: note:   in call to ‘void X::modify()’
+ void X::modify(){i++;}
+      ^
+ConstReturnValues.cpp:34:8: error: invalid initialization of non-const reference of type ‘X&’ from an rvalue of type ‘const X’
+   f7(f6());
+      ~~^~
+ConstReturnValues.cpp:22:6: note:   initializing argument 1 of ‘void f7(X&)’
+ void f7(X& x){ //pass by non-const reference
+      ^~

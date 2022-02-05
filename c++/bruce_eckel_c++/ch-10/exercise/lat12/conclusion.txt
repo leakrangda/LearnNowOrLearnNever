@@ -1,0 +1,1 @@
+yes, it cant find it, because the static scope resolution in global variable, make the T class vecome invisible from the outside file (file scope translation only).

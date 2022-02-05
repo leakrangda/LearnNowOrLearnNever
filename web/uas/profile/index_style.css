@@ -1,0 +1,123 @@
+/* style css_untuk uas */
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: Verdana, Arial, Serif;
+	font-size: 11px;
+	color: #333;
+	background: #fafafa;
+}
+
+/* pembatas utama */
+#container{
+	margin: 6px auto;
+	text-align: left;
+	clear: both;
+	background: #fff;
+	border: 2px solid #666;
+	width: 778px;
+	padding: 0;
+}
+#header{
+	clear: both;
+	margin: 2px;
+	background: #ffea8c;
+	border: 1px solid orange;
+	height: 95px;
+}
+
+#header h1{
+	font-size: 2em;
+	font-family: Arial;
+	color: #c60000;
+	margin: 14px 6px 4px 8px;
+}
+#menu{
+	clear: both;
+	padding:0;
+	margin: 0 0 25px 2px;
+}
+#menu ul{
+	float:left;
+	border:none;
+	list-style: none;
+	font: bold 14px Arial;
+}
+#menu ul li{
+	display: inline;
+}
+#menu ul li a{
+	padding-right: 16px;
+	border-bottom: 4px solid orange;
+}
+#menu ul li a:hover{
+	border-bottom: 4px solid #c60000;
+}
+#menu ul li a.aktif{
+	border-bottom: 4px solid #c60000;
+}
+#foooter{
+	position: relative;
+	clear: both;
+	height: 40px;
+	border: none;
+	background: #cfcfcf;
+	color: #fff
+	width: 100%;
+	text-align: center;
+}
+
+#footer{
+	position: relative;
+	clear: both;
+	height: 40px;
+	border: none;
+	background: #cfcfcf;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+}
+#footer span{
+	top: 10px;
+	position: absolute;
+}
+#content{
+	margin: 2px 2px 8px 2px;
+	float: left;
+	width: 485px;
+	border: 1px solid #ccc;
+	padding: 6px 10px;
+}
+#content h1{
+	border-bottom: 2px dashed #ccc;
+	margin-bottom: 16px;
+}
+#side{
+	border: 1px solid #ccc;
+	float: right;
+	margin: 2px;
+	width: 250px;
+	padding: 2px;
+}
+#side h1{
+	border-bottom: 1px solid #fafafa;
+}
+#side h2{
+	border-bottom:  #cfcfcf;
+	padding: 3px;
+	color: #333;
+	text-align: center;
+}
+#side p{
+	border: 1px solid #ccc;
+	padding: 4px;
+}
+a{
+	text-decoration: none;
+	color: #666;
+}
+a: visited{
+	color: #666;
+}

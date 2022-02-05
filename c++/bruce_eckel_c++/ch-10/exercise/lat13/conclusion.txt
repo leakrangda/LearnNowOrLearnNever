@@ -1,0 +1,1 @@
+yes, it cant find the definition of the f() function, because the f() function definition is set static in the 13_lib.cpp file, and make it visible only to that file.

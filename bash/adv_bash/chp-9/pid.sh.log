@@ -1,0 +1,9 @@
+Logging PIDs background commands for script: ./pid.sh
+
+PID of"sleep 100": 2468
+Logging PIDs background commands for script: ./pid.sh
+
+PID of"sleep 100": 2480
+Logging PIDs background commands for script: ./pid.sh
+
+PID of"sleep 100": 2501

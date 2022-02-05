@@ -1,0 +1,55 @@
+#wrapper{
+	margin: auto;
+	width: 756px;
+	border: 1px solid blue;
+}
+#header{
+	height: 70px;
+	border: 1px solid green;
+}
+#inner{
+	float: left;
+	margin: 5px 0;
+	broder: 1px solid black;
+}
+#sidebar{
+	float: left;
+	margin-right: 20px;
+	width: 180px;
+	height: 330px;
+	border: 1px solid red;
+}
+#inner2{
+	float: left;
+	width: 550px;
+	height: 320px;
+	border: 1px solid red;
+}
+#top{
+	height: 70px;
+	border: 1px solid red;
+}
+#content{
+	float:left;
+	margin-right: 20px;
+	margin-top: 10px;
+	maring-left: 20px;
+	width: 320px;
+	height: 230px;
+	border: 1px solid red;
+}
+#right{
+	float: right;
+	margin-top: 10px;
+	width: 205px;
+	height: 200px;
+	border: 1px solid green;
+}
+#footer{
+	clear: both;
+	height: 50px;
+	border: 1px solid green;
+}
+body{
+	background: url(gambar/Dragon-Kali-Linux.png);
+}

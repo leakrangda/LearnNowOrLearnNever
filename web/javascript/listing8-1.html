@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>window opener and closer</title>
+		<script language="Javascript" type="text/javascript">
+var newWindow;
+function makeNewWindow(){
+	newWindow = window.open("","","height=300,width=300");
+}
+function closeNewWindow(){
+	if(newWindow){	//kalau newWindow memiliki nilai
+		newWindow.close();
+		newWindow = null;
+	}
+}
+		</script>
+	</head>
+	<body>
+		<form>
+			<input type="button" value="create new window"
+			       onClick = "makeNewWindow()">
+			<input type="button" value="close new window"
+			       onClick = "closeNewWindow()">
+		</form>
+	</body>
+</html>

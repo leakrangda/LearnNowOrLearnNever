@@ -1,0 +1,1 @@
+when using c compiler, it compiles without an error. but when using c++ compiler, the compiler make an error message that bird pointer can't be assigned to void pointer, which is good

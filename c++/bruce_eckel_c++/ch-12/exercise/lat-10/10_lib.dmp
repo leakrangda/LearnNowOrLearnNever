@@ -1,0 +1,72 @@
+0000000000000690 <main>:
+ 690:	55                   	push   %rbp
+ 691:	48 89 e5             	mov    %rsp,%rbp
+ 694:	48 83 ec 10          	sub    $0x10,%rsp
+ 698:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+ 69c:	be 00 00 00 00       	mov    $0x0,%esi
+ 6a1:	48 89 c7             	mov    %rax,%rdi
+ 6a4:	e8 25 00 00 00       	callq  6ce <_ZN1TC1Ei>
+ 6a9:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+ 6ad:	be 00 00 00 00       	mov    $0x0,%esi
+ 6b2:	48 89 c7             	mov    %rax,%rdi
+ 6b5:	e8 2c 00 00 00       	callq  6e6 <_ZN1TppEi>
+ 6ba:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+ 6be:	48 89 c7             	mov    %rax,%rdi
+ 6c1:	e8 5e 00 00 00       	callq  724 <_ZN1TppEv>
+ 6c6:	b8 00 00 00 00       	mov    $0x0,%eax
+ 6cb:	c9                   	leaveq 
+ 6cc:	c3                   	retq   
+ 6cd:	90                   	nop
+
+00000000000006ce <_ZN1TC1Ei>:
+ 6ce:	55                   	push   %rbp
+ 6cf:	48 89 e5             	mov    %rsp,%rbp
+ 6d2:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+ 6d6:	89 75 f4             	mov    %esi,-0xc(%rbp)
+ 6d9:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ 6dd:	8b 55 f4             	mov    -0xc(%rbp),%edx
+ 6e0:	89 10                	mov    %edx,(%rax)
+ 6e2:	90                   	nop
+ 6e3:	5d                   	pop    %rbp
+ 6e4:	c3                   	retq   
+ 6e5:	90                   	nop
+
+00000000000006e6 <_ZN1TppEi>:
+ 6e6:	55                   	push   %rbp
+ 6e7:	48 89 e5             	mov    %rsp,%rbp
+ 6ea:	48 83 ec 20          	sub    $0x20,%rsp
+ 6ee:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+ 6f2:	89 75 e4             	mov    %esi,-0x1c(%rbp)
+ 6f5:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 6f9:	8b 00                	mov    (%rax),%eax
+ 6fb:	89 45 fc             	mov    %eax,-0x4(%rbp)
+ 6fe:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 702:	8b 00                	mov    (%rax),%eax
+ 704:	8d 50 01             	lea    0x1(%rax),%edx
+ 707:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 70b:	89 10                	mov    %edx,(%rax)
+ 70d:	8b 55 fc             	mov    -0x4(%rbp),%edx
+ 710:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+ 714:	89 d6                	mov    %edx,%esi
+ 716:	48 89 c7             	mov    %rax,%rdi
+ 719:	e8 b0 ff ff ff       	callq  6ce <_ZN1TC1Ei>
+ 71e:	8b 45 f0             	mov    -0x10(%rbp),%eax
+ 721:	c9                   	leaveq 
+ 722:	c3                   	retq   
+ 723:	90                   	nop
+
+0000000000000724 <_ZN1TppEv>:
+ 724:	55                   	push   %rbp
+ 725:	48 89 e5             	mov    %rsp,%rbp
+ 728:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+ 72c:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ 730:	8b 00                	mov    (%rax),%eax
+ 732:	8d 50 01             	lea    0x1(%rax),%edx
+ 735:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ 739:	89 10                	mov    %edx,(%rax)
+ 73b:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ 73f:	5d                   	pop    %rbp
+ 740:	c3                   	retq   
+ 741:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+ 748:	00 00 00 
+ 74b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)

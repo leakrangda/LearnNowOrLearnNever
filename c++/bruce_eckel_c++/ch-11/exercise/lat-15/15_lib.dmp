@@ -1,0 +1,104 @@
+--fungsi T f(T arg)
+0000000000000940 <_Z1f1T>:
+ 940:	55                   	push   %rbp
+ 941:	48 89 e5             	mov    %rsp,%rbp
+ 944:	48 89 7d f0          	mov    %rdi,-0x10(%rbp)
+ 948:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 94c:	5d                   	pop    %rbp
+ 94d:	c3                   	retq   
+--fungsi U f(U arg)
+000000000000094e <_Z2f21U>:
+ 94e:	55                   	push   %rbp
+ 94f:	48 89 e5             	mov    %rsp,%rbp
+ 952:	48 83 ec 10          	sub    $0x10,%rsp
+ 956:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+ 95a:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+ 95e:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+ 962:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ 966:	48 89 d6             	mov    %rdx,%rsi
+ 969:	48 89 c7             	mov    %rax,%rdi
+ 96c:	e8 1d 01 00 00       	callq  a8e <_ZN1UC1ERKS_>
+ 971:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ 975:	c9                   	leaveq 
+ 976:	c3                   	retq   
+--main() fungsi
+0000000000000977 <main>:
+ 977:	55                   	push   %rbp
+ 978:	48 89 e5             	mov    %rsp,%rbp
+ 97b:	48 83 ec 50          	sub    $0x50,%rsp
+ 97f:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+ 983:	ba 00 00 00 00       	mov    $0x0,%edx
+ 988:	be 00 00 00 00       	mov    $0x0,%esi
+ 98d:	48 89 c7             	mov    %rax,%rdi
+ 990:	e8 b1 00 00 00       	callq  a46 <_ZN1TC1Eii>		>> T test;
+ 995:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 999:	48 89 c7             	mov    %rax,%rdi
+ 99c:	e8 9f ff ff ff       	callq  940 <_Z1f1T>		>> f(test);
+ 9a1:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+ 9a5:	48 8d 45 c0          	lea    -0x40(%rbp),%rax
+ 9a9:	ba 00 00 00 00       	mov    $0x0,%edx
+ 9ae:	be 00 00 00 00       	mov    $0x0,%esi
+ 9b3:	48 89 c7             	mov    %rax,%rdi
+ 9b6:	e8 af 00 00 00       	callq  a6a <_ZN1UC1Eii>		>>U test3;
+ 9bb:	48 8d 55 c0          	lea    -0x40(%rbp),%rdx
+ 9bf:	48 8d 45 f0          	lea    -0x10(%rbp),%rax
+ 9c3:	48 89 d6             	mov    %rdx,%rsi
+ 9c6:	48 89 c7             	mov    %rax,%rdi
+ 9c9:	e8 c0 00 00 00       	callq  a8e <_ZN1UC1ERKS_>	>>U copconstructor	
+ 9ce:	48 8d 45 b0          	lea    -0x50(%rbp),%rax
+ 9d2:	48 8d 55 f0          	lea    -0x10(%rbp),%rdx
+ 9d6:	48 89 d6             	mov    %rdx,%rsi
+ 9d9:	48 89 c7             	mov    %rax,%rdi
+ 9dc:	e8 6d ff ff ff       	callq  94e <_Z2f21U>		>>f3(test3);
+--
+0000000000000a31 <_GLOBAL__sub_I__Z1f1T>:
+ a31:	55                   	push   %rbp
+ a32:	48 89 e5             	mov    %rsp,%rbp
+ a35:	be ff ff 00 00       	mov    $0xffff,%esi
+ a3a:	bf 01 00 00 00       	mov    $0x1,%edi
+ a3f:	e8 a4 ff ff ff       	callq  9e8 <_Z41__static_initialization_and_destruction_0ii>
+ a44:	5d                   	pop    %rbp
+ a45:	c3                   	retq   
+--class T definisi
+0000000000000a46 <_ZN1TC1Eii>:
+ a46:	55                   	push   %rbp
+ a47:	48 89 e5             	mov    %rsp,%rbp
+ a4a:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+ a4e:	89 75 f4             	mov    %esi,-0xc(%rbp)
+ a51:	89 55 f0             	mov    %edx,-0x10(%rbp)
+ a54:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ a58:	8b 55 f4             	mov    -0xc(%rbp),%edx
+ a5b:	89 10                	mov    %edx,(%rax)
+ a5d:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ a61:	8b 55 f0             	mov    -0x10(%rbp),%edx
+ a64:	89 50 04             	mov    %edx,0x4(%rax)
+ a67:	90                   	nop
+ a68:	5d                   	pop    %rbp
+ a69:	c3                   	retq   
+--class U definisi
+0000000000000a6a <_ZN1UC1Eii>:
+ a6a:	55                   	push   %rbp
+ a6b:	48 89 e5             	mov    %rsp,%rbp
+ a6e:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+ a72:	89 75 f4             	mov    %esi,-0xc(%rbp)
+ a75:	89 55 f0             	mov    %edx,-0x10(%rbp)
+ a78:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ a7c:	8b 55 f4             	mov    -0xc(%rbp),%edx
+ a7f:	89 10                	mov    %edx,(%rax)
+ a81:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ a85:	8b 55 f0             	mov    -0x10(%rbp),%edx
+ a88:	89 50 04             	mov    %edx,0x4(%rax)
+ a8b:	90                   	nop
+ a8c:	5d                   	pop    %rbp
+ a8d:	c3                   	retq   
+--class U copy constructor
+0000000000000a8e <_ZN1UC1ERKS_>:
+ a8e:	55                   	push   %rbp
+ a8f:	48 89 e5             	mov    %rsp,%rbp
+ a92:	48 83 ec 10          	sub    $0x10,%rsp
+ a96:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+ a9a:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+ a9e:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ aa2:	8b 10                	mov    (%rax),%edx
+ aa4:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+ aa8:	89 10                	mov    %edx,(%rax)

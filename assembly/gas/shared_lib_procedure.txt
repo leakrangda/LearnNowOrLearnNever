@@ -1,0 +1,1 @@
+ld -shared object.o other_object.o another_object.o -o shared.o

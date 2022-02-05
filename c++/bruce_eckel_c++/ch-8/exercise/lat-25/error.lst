@@ -1,0 +1,4 @@
+Mutable.cpp: In member function ‘void Z::f() const’:
+Mutable.cpp:13:3: error: increment of member ‘Z::i’ in read-only object
+  i++; //Erro -- const member function
+   ^~

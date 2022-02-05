@@ -1,0 +1,4 @@
+kesimpulan dari soal ini adalah:
+c++ lebih strict dalam melakukan kompilasi, dan secara otomatis akan memberikan
+error jika terdapat fungsi atau pemanggilan fungsi tanpa dihadiri oleh declarasi
+atau header terkait.

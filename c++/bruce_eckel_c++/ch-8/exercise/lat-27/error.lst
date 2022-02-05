@@ -1,0 +1,7 @@
+27_lib.cpp: In function ‘int main()’:
+27_lib.cpp:23:13: error: passing ‘volatile T’ as ‘this’ argument discards qualifiers [-fpermissive]
+  test.modif();
+             ^
+27_lib.cpp:15:6: note:   in call to ‘void T::modif()’
+ void T::modif(){a=10;}
+      ^

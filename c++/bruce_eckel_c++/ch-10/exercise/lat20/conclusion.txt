@@ -1,0 +1,1 @@
+yes, because it's local only to the block of function that using that directive

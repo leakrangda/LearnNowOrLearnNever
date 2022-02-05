@@ -1,0 +1,1 @@
+there double free corruption, when applying the copy contructor in both class, everything is done.

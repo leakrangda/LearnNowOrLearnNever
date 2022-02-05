@@ -1,0 +1,3 @@
+creating shared library (single source): gcc -c -fPIC source.c 
+creating shared library (multiple source): gcc -shared -fPIC -o libtest.so test1.o test2.o> creat_so.txt.
+using shared library : gcc -o result -L. -ltest /*for libtest.so*/

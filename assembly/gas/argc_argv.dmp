@@ -1,0 +1,21 @@
+0000000000000660 <main>:
+ 660:	55                   	push   %rbp
+ 661:	48 89 e5             	mov    %rsp,%rbp
+ 664:	89 7d ec             	mov    %edi,-0x14(%rbp)
+ 667:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+ 66b:	8b 45 ec             	mov    -0x14(%rbp),%eax
+ 66e:	89 45 fc             	mov    %eax,-0x4(%rbp)
+ 671:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+ 675:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+ 679:	b8 00 00 00 00       	mov    $0x0,%eax
+ 67e:	5d                   	pop    %rbp
+ 67f:	c3                   	retq   
+
+0000000000000680 <__libc_csu_init>:
+ 680:	41 57                	push   %r15
+ 682:	41 56                	push   %r14
+ 684:	41 89 ff             	mov    %edi,%r15d
+ 687:	41 55                	push   %r13
+ 689:	41 54                	push   %r12
+ 68b:	4c 8d 25 76 07 20 00 	lea    0x200776(%rip),%r12        # 200e08 <__frame_dummy_init_array_entry>
+ 692:	55                   	push   %rbp

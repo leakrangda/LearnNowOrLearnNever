@@ -1,0 +1,7 @@
+24_lib.cpp: In member function ‘void T::change() const’:
+24_lib.cpp:14:10: error: passing ‘const T’ as ‘this’ argument discards qualifiers [-fpermissive]
+  change(7);
+          ^
+24_lib.cpp:10:8: note:   in call to ‘void T::change(int)’
+   void change(int);
+        ^~~~~~

@@ -1,0 +1,192 @@
+
+read-records_allocate:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+08048074 <_start>:
+ 8048074:	89 e5                	mov    %esp,%ebp
+ 8048076:	83 ec 08             	sub    $0x8,%esp
+ 8048079:	e8 91 00 00 00       	call   804810f <allocate_init>
+ 804807e:	68 44 01 00 00       	push   $0x144
+ 8048083:	e8 a5 00 00 00       	call   804812d <allocate>
+ 8048088:	a3 ff 91 04 08       	mov    %eax,0x80491ff
+ 804808d:	b8 05 00 00 00       	mov    $0x5,%eax
+ 8048092:	bb f6 91 04 08       	mov    $0x80491f6,%ebx
+ 8048097:	b9 00 00 00 00       	mov    $0x0,%ecx
+ 804809c:	ba b6 01 00 00       	mov    $0x1b6,%edx
+ 80480a1:	cd 80                	int    $0x80
+ 80480a3:	89 45 fc             	mov    %eax,-0x4(%ebp)
+ 80480a6:	c7 45 f8 01 00 00 00 	movl   $0x1,-0x8(%ebp)
+
+080480ad <record_read_loop>:
+ 80480ad:	ff 75 fc             	pushl  -0x4(%ebp)
+ 80480b0:	ff 35 ff 91 04 08    	pushl  0x80491ff
+ 80480b6:	e8 20 01 00 00       	call   80481db <read_record>
+ 80480bb:	83 c4 08             	add    $0x8,%esp
+ 80480be:	3d 44 01 00 00       	cmp    $0x144,%eax
+ 80480c3:	75 33                	jne    80480f8 <finished_reading>
+ 80480c5:	a1 ff 91 04 08       	mov    0x80491ff,%eax
+ 80480ca:	83 c0 00             	add    $0x0,%eax
+ 80480cd:	50                   	push   %eax
+ 80480ce:	e8 ef 00 00 00       	call   80481c2 <count_chars>
+ 80480d3:	83 c4 04             	add    $0x4,%esp
+ 80480d6:	89 c2                	mov    %eax,%edx
+ 80480d8:	8b 5d f8             	mov    -0x8(%ebp),%ebx
+ 80480db:	b8 04 00 00 00       	mov    $0x4,%eax
+ 80480e0:	8b 0d ff 91 04 08    	mov    0x80491ff,%ecx
+ 80480e6:	83 c1 00             	add    $0x0,%ecx
+ 80480e9:	cd 80                	int    $0x80
+ 80480eb:	ff 75 f8             	pushl  -0x8(%ebp)
+ 80480ee:	e8 b4 00 00 00       	call   80481a7 <write_newline>
+ 80480f3:	83 c4 04             	add    $0x4,%esp
+ 80480f6:	eb b5                	jmp    80480ad <record_read_loop>
+
+080480f8 <finished_reading>:
+ 80480f8:	ff 35 ff 91 04 08    	pushl  0x80491ff
+ 80480fe:	e8 96 00 00 00       	call   8048199 <deallocate>
+ 8048103:	b8 01 00 00 00       	mov    $0x1,%eax
+ 8048108:	bb 00 00 00 00       	mov    $0x0,%ebx
+ 804810d:	cd 80                	int    $0x80
+
+0804810f <allocate_init>:
+ 804810f:	55                   	push   %ebp
+ 8048110:	89 e5                	mov    %esp,%ebp
+ 8048112:	b8 2d 00 00 00       	mov    $0x2d,%eax
+ 8048117:	bb 00 00 00 00       	mov    $0x0,%ebx
+ 804811c:	cd 80                	int    $0x80
+ 804811e:	40                   	inc    %eax
+ 804811f:	a3 07 92 04 08       	mov    %eax,0x8049207
+ 8048124:	a3 03 92 04 08       	mov    %eax,0x8049203
+ 8048129:	89 ec                	mov    %ebp,%esp
+ 804812b:	5d                   	pop    %ebp
+ 804812c:	c3                   	ret    
+
+0804812d <allocate>:
+ 804812d:	55                   	push   %ebp
+ 804812e:	89 e5                	mov    %esp,%ebp
+ 8048130:	8b 4d 08             	mov    0x8(%ebp),%ecx
+ 8048133:	a1 03 92 04 08       	mov    0x8049203,%eax
+ 8048138:	8b 1d 07 92 04 08    	mov    0x8049207,%ebx
+
+0804813e <alloc_loop_begin>:
+ 804813e:	39 d8                	cmp    %ebx,%eax
+ 8048140:	74 21                	je     8048163 <move_break>
+ 8048142:	8b 50 04             	mov    0x4(%eax),%edx
+ 8048145:	83 7d 00 00          	cmpl   $0x0,0x0(%ebp)
+ 8048149:	74 04                	je     804814f <next_location>
+ 804814b:	39 d1                	cmp    %edx,%ecx
+ 804814d:	7e 07                	jle    8048156 <allocate_here>
+
+0804814f <next_location>:
+ 804814f:	83 c0 08             	add    $0x8,%eax
+ 8048152:	01 d0                	add    %edx,%eax
+ 8048154:	eb e8                	jmp    804813e <alloc_loop_begin>
+
+08048156 <allocate_here>:
+ 8048156:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+ 804815c:	83 c0 08             	add    $0x8,%eax
+ 804815f:	89 ec                	mov    %ebp,%esp
+ 8048161:	5d                   	pop    %ebp
+ 8048162:	c3                   	ret    
+
+08048163 <move_break>:
+ 8048163:	83 c3 08             	add    $0x8,%ebx
+ 8048166:	01 cb                	add    %ecx,%ebx
+ 8048168:	50                   	push   %eax
+ 8048169:	51                   	push   %ecx
+ 804816a:	53                   	push   %ebx
+ 804816b:	b8 2d 00 00 00       	mov    $0x2d,%eax
+ 8048170:	cd 80                	int    $0x80
+ 8048172:	83 f8 00             	cmp    $0x0,%eax
+ 8048175:	74 19                	je     8048190 <error>
+ 8048177:	5b                   	pop    %ebx
+ 8048178:	59                   	pop    %ecx
+ 8048179:	58                   	pop    %eax
+ 804817a:	c7 00 00 00 00 00    	movl   $0x0,(%eax)
+ 8048180:	89 48 04             	mov    %ecx,0x4(%eax)
+ 8048183:	83 c0 08             	add    $0x8,%eax
+ 8048186:	89 1d 07 92 04 08    	mov    %ebx,0x8049207
+ 804818c:	89 ec                	mov    %ebp,%esp
+ 804818e:	5d                   	pop    %ebp
+ 804818f:	c3                   	ret    
+
+08048190 <error>:
+ 8048190:	b8 00 00 00 00       	mov    $0x0,%eax
+ 8048195:	89 ec                	mov    %ebp,%esp
+ 8048197:	5d                   	pop    %ebp
+ 8048198:	c3                   	ret    
+
+08048199 <deallocate>:
+ 8048199:	8b 44 24 04          	mov    0x4(%esp),%eax
+ 804819d:	83 e8 08             	sub    $0x8,%eax
+ 80481a0:	c7 00 01 00 00 00    	movl   $0x1,(%eax)
+ 80481a6:	c3                   	ret    
+
+080481a7 <write_newline>:
+ 80481a7:	55                   	push   %ebp
+ 80481a8:	89 e5                	mov    %esp,%ebp
+ 80481aa:	b8 04 00 00 00       	mov    $0x4,%eax
+ 80481af:	8b 5d 08             	mov    0x8(%ebp),%ebx
+ 80481b2:	b9 0b 92 04 08       	mov    $0x804920b,%ecx
+ 80481b7:	ba 01 00 00 00       	mov    $0x1,%edx
+ 80481bc:	cd 80                	int    $0x80
+ 80481be:	89 ec                	mov    %ebp,%esp
+ 80481c0:	5d                   	pop    %ebp
+ 80481c1:	c3                   	ret    
+
+080481c2 <count_chars>:
+ 80481c2:	55                   	push   %ebp
+ 80481c3:	89 e5                	mov    %esp,%ebp
+ 80481c5:	b9 00 00 00 00       	mov    $0x0,%ecx
+ 80481ca:	8b 55 08             	mov    0x8(%ebp),%edx
+
+080481cd <count_loop_begin>:
+ 80481cd:	8a 02                	mov    (%edx),%al
+ 80481cf:	3c 00                	cmp    $0x0,%al
+ 80481d1:	74 04                	je     80481d7 <count_loop_end>
+ 80481d3:	41                   	inc    %ecx
+ 80481d4:	42                   	inc    %edx
+ 80481d5:	eb f6                	jmp    80481cd <count_loop_begin>
+
+080481d7 <count_loop_end>:
+ 80481d7:	89 c8                	mov    %ecx,%eax
+ 80481d9:	5d                   	pop    %ebp
+ 80481da:	c3                   	ret    
+
+080481db <read_record>:
+ 80481db:	55                   	push   %ebp
+ 80481dc:	89 e5                	mov    %esp,%ebp
+ 80481de:	53                   	push   %ebx
+ 80481df:	8b 5d 0c             	mov    0xc(%ebp),%ebx
+ 80481e2:	8b 4d 08             	mov    0x8(%ebp),%ecx
+ 80481e5:	ba 44 01 00 00       	mov    $0x144,%edx
+ 80481ea:	b8 03 00 00 00       	mov    $0x3,%eax
+ 80481ef:	cd 80                	int    $0x80
+ 80481f1:	5b                   	pop    %ebx
+ 80481f2:	89 ec                	mov    %ebp,%esp
+ 80481f4:	5d                   	pop    %ebp
+ 80481f5:	c3                   	ret    
+
+Disassembly of section .data:
+
+080491f6 <file_name>:
+ 80491f6:	74 65                	je     804925d <__bss_start+0x51>
+ 80491f8:	78 74                	js     804926e <__bss_start+0x62>
+ 80491fa:	2e 64 61             	cs fs popa 
+ 80491fd:	74 00                	je     80491ff <record_buffer_ptr>
+
+080491ff <record_buffer_ptr>:
+ 80491ff:	00 00                	add    %al,(%eax)
+	...
+
+08049203 <heap_begin>:
+ 8049203:	00 00                	add    %al,(%eax)
+	...
+
+08049207 <current_break>:
+ 8049207:	00 00                	add    %al,(%eax)
+	...
+
+0804920b <newline>:
+ 804920b:	0a                   	.byte 0xa

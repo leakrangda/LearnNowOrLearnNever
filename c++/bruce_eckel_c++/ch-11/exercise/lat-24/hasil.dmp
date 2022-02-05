@@ -1,0 +1,41 @@
+00000000000009a0 <main>:
+ 9a0:	55                   	push   %rbp
+ 9a1:	48 89 e5             	mov    %rsp,%rbp
+ 9a4:	53                   	push   %rbx
+ 9a5:	48 83 ec 28          	sub    $0x28,%rsp
+ 9a9:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+ 9ad:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+ 9b1:	48 8b 05 c0 07 20 00 	mov    0x2007c0(%rip),%rax        # 201178 <dptr>
+ 9b8:	48 89 c2             	mov    %rax,%rdx
+ 9bb:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+ 9bf:	48 01 d0             	add    %rdx,%rax
+ 9c2:	48 8b 18             	mov    (%rax),%rbx
+ 9c5:	48 8d 35 d9 01 00 00 	lea    0x1d9(%rip),%rsi        # ba5 <_ZStL19piecewise_construct+0x1>
+ 9cc:	48 8d 3d 8d 06 20 00 	lea    0x20068d(%rip),%rdi        # 201060 <_ZSt4cout@@GLIBCXX_3.4>
+ 9d3:	e8 68 fe ff ff       	callq  840 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+ 9d8:	48 89 5d d8          	mov    %rbx,-0x28(%rbp)
+ 9dc:	f2 0f 10 45 d8       	movsd  -0x28(%rbp),%xmm0
+ 9e1:	48 89 c7             	mov    %rax,%rdi
+ 9e4:	e8 27 fe ff ff       	callq  810 <_ZNSolsEd@plt>
+ 9e9:	48 89 c2             	mov    %rax,%rdx
+ 9ec:	48 8b 05 05 06 20 00 	mov    0x200605(%rip),%rax        # 200ff8 <_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@GLIBCXX_3.4>
+ 9f3:	48 89 c6             	mov    %rax,%rsi
+ 9f6:	48 89 d7             	mov    %rdx,%rdi
+ 9f9:	e8 52 fe ff ff       	callq  850 <_ZNSolsEPFRSoS_E@plt>
+ 9fe:	48 8b 05 4b 06 20 00 	mov    0x20064b(%rip),%rax        # 201050 <fptr>
+ a05:	83 e0 01             	and    $0x1,%eax
+ a08:	48 85 c0             	test   %rax,%rax
+ a0b:	74 27                	je     a34 <main+0x94>
+ a0d:	48 8b 05 44 06 20 00 	mov    0x200644(%rip),%rax        # 201058 <fptr+0x8>
+ a14:	48 89 c2             	mov    %rax,%rdx
+ a17:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ a1b:	48 01 d0             	add    %rdx,%rax
+ a1e:	48 8b 00             	mov    (%rax),%rax
+ a21:	48 8b 15 28 06 20 00 	mov    0x200628(%rip),%rdx        # 201050 <fptr>
+ a28:	48 83 ea 01          	sub    $0x1,%rdx
+ a2c:	48 01 d0             	add    %rdx,%rax
+ a2f:	48 8b 00             	mov    (%rax),%rax
+ a32:	eb 07                	jmp    a3b <main+0x9b>
+ a34:	48 8b 05 15 06 20 00 	mov    0x200615(%rip),%rax        # 201050 <fptr>
+ a3b:	48 8b 15 16 06 20 00 	mov    0x200616(%rip),%rdx        # 201058 <fptr+0x8>
+ a42:	48 89 d1             	mov    %rdx,%rcx
