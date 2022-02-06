@@ -1,2 +1,1 @@
-# LearnNowOrLearnNever
-change start within your self
+try to re reset and push
