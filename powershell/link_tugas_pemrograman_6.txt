@@ -1,0 +1,2 @@
+youtube: https://youtu.be/xOX254H8kIw
+github: https://github.com/leakrangda/Pemrograman6/tree/master
